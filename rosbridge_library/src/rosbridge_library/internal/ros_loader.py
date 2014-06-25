@@ -178,12 +178,12 @@ def _load_class(modname, subname, classname):
     Returns the loaded module, or None on failure """
     global loaded_modules
 
-    try:
+    #try:
         # roslib maintains a cache of loaded manifests, so no need to duplicate
-        roslib.launcher.load_manifest(modname)
-    except Exception as exc:
-        raise InvalidPackageException(modname, exc)
-
+    #    roslib.launcher.load_manifest(modname)
+   # except Exception as exc:
+       # raise InvalidPackageException(modname, exc)
+	#print("Manifests loading excluded");
 
     try:
         pypkg = __import__('%s.%s' % (modname, subname))
